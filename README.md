@@ -1,16 +1,20 @@
-# React + Vite
+# AS2 Graph Viewer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interactive graph-based viewer for exploring lecture concepts in **AS2**
 
-Currently, two official plugins are available:
+## Features
+- Interactive node graph
+- Search and selection of terms
+- Visual exploration of relationships
+- Static, frontend-only application
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Usage
+Open in browser and interact with the graph. No backend required.
 
-## React Compiler
+## Disclaimer
+Part of the content is generated using **AI**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+There is **no guarantee of correctness, completeness, or academic accuracy**.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project is for **visualization only** and must not be used as a reliable study or exam source.
+All information should be independently verified using official lecture materials.
