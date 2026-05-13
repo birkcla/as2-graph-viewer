@@ -133,8 +133,8 @@ export default function GraphViewer() {
         renderer.toneMapping = THREE.ACESFilmicToneMapping;
         renderer.toneMappingExposure = 1.6;
         const bloom = new UnrealBloomPass(
-            new THREE.Vector2(window.innerWidth / 4, window.innerHeight / 4),
-            0.08, 0.4, 0.9,
+            new THREE.Vector2(dimensions.width, dimensions.height),
+            0.06, 0.4, 0.9,
         );
         graphRef.current.postProcessingComposer().addPass(bloom);
     }, []);

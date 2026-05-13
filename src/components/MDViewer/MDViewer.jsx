@@ -13,7 +13,7 @@ export function MDViewer() {
 
     const processedContent = selection
         ? selection.textContent.replace(/\[\[([^\]]+)\]\]/g, (_, name) => `[${name}](${encodeURIComponent(name)})`)
-        : "### No node selected";
+        : null;
 
     const handleLinkClick = (href) => {
         const name = decodeURIComponent(href);
@@ -24,35 +24,47 @@ export function MDViewer() {
         if (target) setSelection(target);
     };
 
-    return (
-        <div className="file-viewer">
-            <div className="markdown-wrapper">
-                <ReactMarkdown
-                    remarkPlugins={[remarkGfm]}
-                    remarkPlugins={[remarkMath]}
-                    rehypePlugins={[rehypeKatex]}
-                    components={{
-                        a: ({ href, children }) => {
-                            const isExternal = href.startsWith("http://") || href.startsWith("https://");
+    function getContent() {
+        if (!selection) {
+            return <div>No node selected</div>
+        } else {
+            return (
+                <div className="markdown-wrapper">
+                    <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
+                        remarkPlugins={[remarkMath]}
+                        rehypePlugins={[rehypeKatex]}
+                        components={{
+                            a: ({ href, children }) => {
+                                const isExternal = href.startsWith("http://") || href.startsWith("https://");
 
-                            if (isExternal) {
+                                if (isExternal) {
+                                    return (
+                                        <a href={href} target="_blank" rel="noreferrer">
+                                            {href}
+                                        </a>
+                                    );
+                                }
+
                                 return (
-                                    <a href={href} target="_blank" rel="noreferrer">
-                                        {href}
+                                    <a href={href} onClick={(e) => { e.preventDefault(); handleLinkClick(href); }}>
+                                        {children}
                                     </a>
                                 );
                             }
+                        }}
+                    >
+                        {processedContent}
+                    </ReactMarkdown>
+                </div>
+            )
+        }
+    }
 
-                            return (
-                                <a href={href} onClick={(e) => { e.preventDefault(); handleLinkClick(href); }}>
-                                    {children}
-                                </a>
-                            );
-                        }
-                    }}
-                >
-                    {processedContent}
-                </ReactMarkdown>
+    return (
+        <div className="file-viewer">
+            <div className="file-box">
+                {getContent()}
             </div>
         </div>
     );
