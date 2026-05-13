@@ -19,7 +19,7 @@ export default function GraphViewer() {
     const graphRef = useRef(null);
 
     const containerRef = useRef(null);
-    const [dimensions, setDimensions] = useState({ width: 100, height: 100 });
+    const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
 
 
@@ -134,7 +134,7 @@ export default function GraphViewer() {
         renderer.toneMappingExposure = 1.6;
         const bloom = new UnrealBloomPass(
             new THREE.Vector2(window.innerWidth / 4, window.innerHeight / 4),
-            0.06, 0.4, 0.9,
+            0.08, 0.4, 0.9,
         );
         graphRef.current.postProcessingComposer().addPass(bloom);
     }, []);
