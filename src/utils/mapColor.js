@@ -1,8 +1,8 @@
 export function mapColor(type) {
     const colors = {
-        term: "#ff4444",
-        person:  "#44aaff",
-        discovery:   "#ffaa00",
+        term: "#ffaa00",
+        concept:  "#ff4444",
+        calculation:   "#aaaaaa",
         theory: "#00ff00",
         default: "#aaaaaa",
     };

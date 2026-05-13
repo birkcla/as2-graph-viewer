@@ -2,7 +2,7 @@ import {createContext, useContext, useState} from "react";
 
 const contentContext = createContext(null);
 
-const mdFiles = import.meta.glob("/content/*/*.md" , {query: "?raw", import: "default", eager: true});
+const mdFiles = import.meta.glob("/content/**/*.md" , {query: "?raw", import: "default", eager: true});
 
 export const useContent = () => useContext(contentContext);
 
