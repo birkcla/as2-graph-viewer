@@ -1,5 +1,4 @@
 import {ContentProvider} from "./ContentContext.jsx";
-import GraphViewer from "./GraphViewer/GraphViewer.jsx";
 import {Panel, Group, Separator} from "react-resizable-panels";
 import {MDViewer} from "./MDViewer/MDViewer.jsx";
 import "./ContentContainer.css"

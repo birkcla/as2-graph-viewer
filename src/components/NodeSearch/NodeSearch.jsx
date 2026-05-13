@@ -1,4 +1,3 @@
-import {useState} from "react";
 import {useNodes} from "../NodeContext.jsx";
 import Select from "react-select";
 import "./NodeSearch.css"
@@ -9,6 +8,7 @@ export default function NodeSearch() {
     const { setSelection } = useSelection()
     if (!nodes) return null;
     const allOptions = nodes.map(n => ({ value: n.id, label: n.name, node: n }));
+    console.log("allOptions: ", allOptions)
     return (
         <div className="node-search">
             <Select

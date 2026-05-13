@@ -2,7 +2,6 @@
     padding-right: 16px;
     padding-left: 16px;
     min-width: 0;
-    overflow: hidden;
 }
 
 
@@ -35,7 +34,7 @@
 }
 
 .rs__option {
-    color: #aaa;
+    color: #ccc;
 }
 
 .rs__option--is-focused {
